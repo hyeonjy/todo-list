@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>TODOLIST</title>
+  </head>
+  <body>
+    <div class="main hidden">
+      <div class="main-content main-box">
+        <div class="main-content-dots">
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+        </div>
+
+        <div class="main__column">
+          <div class="main__column__intro main-box">
+            <div class="main__column__intro-wrap main-box">
+              <i class="fa-solid fa-horse fa-4x"></i>
+              <h1 id="greeting"></h1>
+
+              <div class="main__column__intro__total">
+                <div class="time-box">
+                  <h2>Total</h2>
+                  <div class="time-box__icons">
+                    <div class="time-box__icon play-wrap">
+                      <i class="fa-solid fa-play fa-xl"></i>
+                    </div>
+                    <div class="time-box__icon stop-wrap hidden">
+                      <i class="fa-solid fa-pause fa-2x"></i>
+                    </div>
+                    <div class="time-box__icon reset-wrap">
+                      <i class="fa-solid fa-arrow-rotate-right fa-xl"></i>
+                    </div>
+                  </div>
+                </div>
+
+                <h3 id="stopwatch">00:00:00</h3>
+              </div>
+            </div>
+          </div>
+
+          <div class="main__column__plan main-box">
+            <div class="main__column__plan-wrap main-box">
+              <div class="main__column__plan__percent main-box">
+                <h1>달성률</h1>
+                <div class="circle-progress">
+                  <div class="circle-progress__content">
+                    <span class="percent">0%</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="main__column__plan__D-day main-box">
+                <div class="D-day-Setting">
+                  <h1 class="D-day-Setting__header">D-Day</h1>
+                  <hr />
+                  <div class="D-day-Setting__content">
+                    <label for="start">Start date:</label>
+                    <input type="date" id="start" />
+                    <i class="fa-solid fa-paper-plane"></i>
+                  </div>
+                </div>
+
+                <span class="D-day-content hidden"></span>
+              </div>
+            </div>
+
+            <div class="main__column__plan-wrap main-box">
+              <h1 class="todo-header">TO DO LIST</h1>
+              <hr />
+              <form id="todo-form">
+                <input
+                  required
+                  type="text"
+                  placeholder="Please write your TO-DO!"
+                />
+              </form>
+              <ul id="todo-list"></ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="main__column">
+          <div class="main__column__today main-box">
+            <h2 id="clock">00:00:00</h2>
+            <h3>Today</h3>
+            <div class="calendar">
+              <div class="calendar__month">
+                <h1></h1>
+                <hr />
+                <span>month</span>
+              </div>
+              <div class="calendar__date">
+                <h1></h1>
+                <hr />
+                <span>date</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="main__column__quote main-box">
+            <div id="quote">
+              <h1></h1>
+              <h1></h1>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="main-icons">
+        <i class="fa-solid fa-palette fa-2x"></i>
+        <i class="fa-solid fa-quote-right fa-2x"></i>
+        <i class="fa-solid fa-moon fa-2x"></i>
+        <i class="fa-solid fa-right-from-bracket fa-2x"></i>
+      </div>
+    </div>
+
+    <div class="login-box">
+      <form class="login-form">
+        <label for="name" class="login-form__column"
+          >Hello, What is your name?</label
+        >
+        <input
+          required
+          maxlength="15"
+          type="text"
+          id="name"
+          class="login-form__column"
+        />
+        <input type="submit" value="Log In" class="login-form__column" />
+      </form>
+    </div>
+
+    <script src="js/greetings.js"></script>
+    <script src="js/clock.js"></script>
+    <script src="js/quotes.js"></script>
+    <script src="js/background.js"></script>
+    <script src="js/day.js"></script>
+    <script src="js/todo.js"></script>
+    <script src="js/stopwatch.js"></script>
+    <script src="js/logout.js"></script>
+    <script
+      src="https://kit.fontawesome.com/493cc16663.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
