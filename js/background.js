@@ -5,8 +5,17 @@ const darkmode = document.querySelector(".main-icons i:nth-child(3)");
 
 function pickImg() {
   const chosenImage = images[Math.floor(Math.random() * images.length)];
-  bgImage.src = `img/${chosenImage}`;
-  document.body.style.background = `url(${bgImage.src}) no-repeat center center`;
+  const getImg = localStorage.getItem("image");
+  if (getImg === null || getImg + ".jpg" !== chosenImage) {
+    bgImage.src = `img/${chosenImage}`;
+    document.body.style.background = `url(${bgImage.src}) no-repeat center center`;
+    const string = document.body.style.backgroundImage;
+    const idx = string.lastIndexOf("/") + 1;
+    const currentImage = string[idx];
+    localStorage.setItem("image", currentImage);
+  } else {
+    pickImg();
+  }
 }
 
 function setDark() {
@@ -14,13 +23,8 @@ function setDark() {
     const prevImage = localStorage.getItem("image");
     bgImage.src = `img/${images[prevImage]}`;
     document.body.style.background = `url(${bgImage.src}) no-repeat center center`;
-    localStorage.removeItem("image");
     document.body.style.backgroundColor = "initial";
   } else {
-    const string = document.body.style.backgroundImage;
-    const idx = string.lastIndexOf("/") + 1;
-    const currentImage = string[idx];
-    localStorage.setItem("image", currentImage);
     document.body.style.background = "rgb(60, 60, 60)";
   }
 }
