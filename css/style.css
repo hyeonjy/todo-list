@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap");
+
+@import "reset.css";
+@import "login.css";
+@import "components.css";
+@import "intro.css";
+@import "plan.css";
+@import "today.css";
+@import "quote.css";
+
+body {
+  font-family: "Open Sans", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 1220px;
+  height: 100vh;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+@keyframes bigger {
+  0%,
+  100% {
+    transform: none;
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.main__column__intro:hover,
+.main__column__plan:hover,
+.main__column__today:hover,
+.main__column__quote:hover {
+  animation: bigger 0.8s ease-in-out;
+}
+
+.main__column__plan__percent:hover,
+.main__column__plan__D-day:hover,
+.main__column__plan-wrap:last-child:hover {
+  border: 3px solid gray;
+}
+
+.hidden {
+  display: none;
+}

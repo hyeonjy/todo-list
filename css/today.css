@@ -1,0 +1,42 @@
+.main__column__today {
+  width: 350px;
+  height: 150px;
+  padding: 20px;
+  margin: 10px;
+}
+
+.main__column__today #clock {
+  font-weight: 600;
+  color: rgb(85, 83, 83);
+}
+
+.main__column__today h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 5px;
+}
+
+.calendar {
+  display: flex;
+}
+
+.calendar__month,
+.calendar__date {
+  display: flex;
+  flex-direction: column;
+  width: 85px;
+  height: 100px;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(255, 157, 157);
+  margin: 10px;
+  border-radius: 10px;
+}
+
+.calendar h1 {
+  font-size: 35px;
+}
+
+.calendar hr {
+  width: 40px;
+}

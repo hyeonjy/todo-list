@@ -1,0 +1,19 @@
+.main__column__quote {
+  width: 580px;
+  height: 150px;
+  padding: 20px;
+  margin: 10px;
+}
+
+#quote {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#quote h1:first-child {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
