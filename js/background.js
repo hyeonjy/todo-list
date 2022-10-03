@@ -16,12 +16,10 @@ function pickImg() {
   const random = Math.floor(Math.random() * images.length);
   let chosenImage = images[random];
   const getImg = localStorage.getItem("image");
-  if (getImg === null || getImg + ".jpg" !== chosenImage) {
-    setImg(chosenImage);
-  } else {
+  if (!(getImg === null || getImg + ".jpg" !== chosenImage)) {
     chosenImage = images[(random + 1) % images.length];
-    setImg(chosenImage);
   }
+  setImg(chosenImage);
 }
 
 function setDark() {
