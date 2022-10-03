@@ -3,18 +3,24 @@ const bgImage = document.createElement("img");
 const icon = document.querySelector(".main-icons i:first-child");
 const darkmode = document.querySelector(".main-icons i:nth-child(3)");
 
+function setImg(chosenImage) {
+  bgImage.src = `img/${chosenImage}`;
+  document.body.style.background = `url(${bgImage.src}) no-repeat center center`;
+  const string = document.body.style.backgroundImage;
+  const idx = string.lastIndexOf("/") + 1;
+  const currentImage = string[idx];
+  localStorage.setItem("image", currentImage);
+}
+
 function pickImg() {
-  const chosenImage = images[Math.floor(Math.random() * images.length)];
+  const random = Math.floor(Math.random() * images.length);
+  let chosenImage = images[random];
   const getImg = localStorage.getItem("image");
   if (getImg === null || getImg + ".jpg" !== chosenImage) {
-    bgImage.src = `img/${chosenImage}`;
-    document.body.style.background = `url(${bgImage.src}) no-repeat center center`;
-    const string = document.body.style.backgroundImage;
-    const idx = string.lastIndexOf("/") + 1;
-    const currentImage = string[idx];
-    localStorage.setItem("image", currentImage);
+    setImg(chosenImage);
   } else {
-    pickImg();
+    chosenImage = images[(random + 1) % images.length];
+    setImg(chosenImage);
   }
 }
 
